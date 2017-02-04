@@ -1,0 +1,17 @@
+.row
+  .col-xs-3
+    = render 'sidebar', project: @project
+  .col-xs-9
+    h1= @project.name
+
+    p= simple_format @project.description
+
+    = link_to '新增分類', new_project_collection_path(@project), class: 'btn btn-success col-xs-2 offset-xs-8'
+    = link_to '新增 API', new_project_api_request_path(@project), class: 'btn btn-primary col-xs-2 pull-xs-right'
+    .project id="project-#{@project.id}" data-spy="scroll" data-target="#project-sidebar"
+      - @project.collections.each do |collection|
+        = render 'collection', collection: collection
+    - if @project.uncollection_apis.count != 0
+      h3#uncollection 未分類
+      - @project.uncollection_apis.each do |api|
+        = render 'api', api: api

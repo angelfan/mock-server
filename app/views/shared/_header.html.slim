@@ -1,0 +1,11 @@
+header.navbar.navbar-light.navbar-static-top.bd-navbar
+  .container
+    nav
+      .collapse.navbar-toggleable-xs
+        ul.nav.navbar-nav
+          li.nav-item class="#{active_class_for_path('root')}"
+            = link_to 'Mock API Server', root_path, class: 'nav-item nav-link'
+          li.nav-item class="#{active_class_for_path('projects')}"
+            = link_to '專案列表', projects_path, class: 'nav-item nav-link'
+          li.nav-item class="#{active_class_for_path('settings')}"
+            = link_to '設定', settings_path, class: 'nav-item nav-link'
