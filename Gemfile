@@ -24,8 +24,9 @@ gem 'seed-fu', '~> 2.3'
 gem 'mustermann-rails'
 gem 'nested_form'
 
-#services
-gem 'rollbar'
+
+gem 'mina'
+gem 'mina-puma', require: false
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -53,9 +54,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
-  gem 'annotate'
 end
 
-gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'annotate'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
